@@ -34,6 +34,7 @@ jobs:
     - name: Build Qt
       run: |
         Get-ChildItem
+        cmake .
         cd qt-build
         Get-ChildItem
         cmake --build . --parallel
