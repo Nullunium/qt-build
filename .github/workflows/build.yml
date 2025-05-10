@@ -24,7 +24,7 @@ jobs:
         # perl init-repository
     - name: Set up Visual Studio environment
       run: |
-        call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+        "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
     - name: Create build directory
       run: mkdir qt-build
     - name: Configure Qt
