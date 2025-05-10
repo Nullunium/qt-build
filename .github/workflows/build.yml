@@ -33,8 +33,9 @@ jobs:
         ../qt5/configure.bat -prefix %CD%\qt-install -webengine-proprietary-codecs -release -opensource -confirm-license
     - name: Build Qt
       run: |
+        Get-ChildItem
         cd qt-build
-        cmake ..
+        Get-ChildItem
         cmake --build . --parallel
     - name: Install Qt
       run: |
