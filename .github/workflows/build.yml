@@ -1,0 +1,46 @@
+name: Build Qt WebEngine
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-2022
+    steps:
+    - name: Install dependencies
+      run: |
+        choco install gperf
+        choco install winflexbison
+        choco install perl
+        choco install ninja
+    - name: Clone Qt repository
+      run: git clone https://code.qt.io/qt/qt5.git
+    - name: Checkout version 6.8.3
+      run: |
+        cd qt5
+        git checkout v6.8.3
+    - name: Initialize submodules
+      run: |
+        cd qt5
+        perl init-repository
+    - name: Set up Visual Studio environment
+      run: |
+        call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+    - name: Create build directory
+      run: mkdir qt-build
+    - name: Configure Qt
+      run: |
+        cd qt-build
+        ../qt5/configure.bat -prefix %CD%\qt-install -webengine-proprietary-codecs -release -opensource -confirm-license
+    - name: Build Qt
+      run: |
+        cd qt-build
+        cmake --build . --parallel
+    - name: Install Qt
+      run: |
+        cd qt-build
+        cmake --install .
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: qt-webengine
+        path: qt-build/qt-install
