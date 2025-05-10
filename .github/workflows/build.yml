@@ -34,6 +34,7 @@ jobs:
     - name: Build Qt
       run: |
         cd qt-build
+        cmake ..
         cmake --build . --parallel
     - name: Install Qt
       run: |
