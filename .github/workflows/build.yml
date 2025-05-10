@@ -13,14 +13,14 @@ jobs:
         choco install perl
         choco install ninja
     - name: Clone Qt repository
-      run: git clone https://code.qt.io/qt/qt5.git
+      run: git clone https://code.qt.io/qt/qt6.git
     - name: Checkout version 6.8.3
       run: |
-        cd qt5
+        cd qt6
         git checkout v6.8.3
     - name: Initialize submodules
       run: |
-        cd qt5
+        cd qt6
         perl init-repository
     - name: Set up Visual Studio environment
       run: |
@@ -30,7 +30,7 @@ jobs:
     - name: Configure Qt
       run: |
         cd qt-build
-        ../qt5/configure.bat -prefix %CD%\qt-install -webengine-proprietary-codecs -release -opensource -confirm-license
+        ../qt6/configure.bat -prefix %CD%\qt-install -webengine-proprietary-codecs -release -opensource -confirm-license
     - name: Build Qt
       run: |
         cd qt-build
