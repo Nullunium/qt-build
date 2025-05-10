@@ -16,11 +16,11 @@ jobs:
       run: git clone https://code.qt.io/qt/qtwebengine.git/
     - name: Checkout version 6.8.3
       run: |
-        cd qt6
+        cd qtwebengine
         git checkout v6.8.3
     - name: Initialize submodules
       run: |
-        cd qt6
+        cd qtwebengine
         perl init-repository
     - name: Set up Visual Studio environment
       run: |
@@ -30,7 +30,7 @@ jobs:
     - name: Configure Qt
       run: |
         cd qt-build
-        ../qt6/configure.bat -prefix %CD%\qt-install -webengine-proprietary-codecs -release -opensource -confirm-license
+        ../qtwebengine/configure.bat -prefix %CD%\qt-install -webengine-proprietary-codecs -release -opensource -confirm-license
     - name: Build Qt
       run: |
         cd qt-build
