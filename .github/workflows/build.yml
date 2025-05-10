@@ -40,7 +40,7 @@ jobs:
         cd qt-build
         cmake --install .
     - name: Upload artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: qt-webengine
         path: qt-build/qt-install
