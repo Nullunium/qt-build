@@ -6,6 +6,9 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
+    - name: Set up Visual Studio environment
+      run: |
+        & "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
     - name: Install dependencies
       run: |
         choco install gperf
@@ -16,9 +19,6 @@ jobs:
         choco install nodejs
         choco install nugetpackagemanager
         NuGet\Install-Package Microsoft.Windows.SDK.CPP.x64 -Version 10.0.26100.3916
-    - name: Set up Visual Studio environment
-      run: |
-        & "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
     - name: Clone Qt repository
       run: git clone https://code.qt.io/qt/qt5.git
     - name: Checkout version 6.8.3
