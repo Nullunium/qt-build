@@ -14,6 +14,9 @@ jobs:
         choco install ninja
         pip install html5lib
         choco install nodejs
+    - name: Set up Visual Studio environment
+      run: |
+        & "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
     - name: Clone Qt repository
       run: git clone https://code.qt.io/qt/qt5.git
     - name: Checkout version 6.8.3
@@ -24,9 +27,6 @@ jobs:
       run: |
         cd qt5
         .\init-repository.bat
-    - name: Set up Visual Studio environment
-      run: |
-        & "C:\Program Files\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
     - name: Create build directory
       run: mkdir qt-build
     - name: Configure Qt
