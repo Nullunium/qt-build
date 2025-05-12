@@ -43,7 +43,8 @@ jobs:
         libgl-dev \
         libegl-dev \
         libfontconfig1-dev \
-        libinput-dev 
+        libinput-dev \
+        libatspi2.0-dev
         pip install html5lib
     - name: Clone Qt repository
       run: git clone https://code.qt.io/qt/qt5.git
