@@ -53,15 +53,15 @@ jobs:
     - name: Configure Qt
       run: |
         cd qt-build
-        ../qt5/configure -prefix qt-install -webengine-proprietary-codecs -release -opensource -confirm-license -Wno-dev
+        ../qt5/configure -prefix qt-install -webengine-proprietary-codecs -release -opensource -confirm-license 
     - name: Build Qt
       run: |
         cmake qt5
-        cmake --build qt-build --parallel -Wno-dev
+        cmake --build qt-build --parallel 
     - name: Install Qt
       run: |
         cd qt-build
-        cmake --install . -Wno-dev
+        cmake --install . 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
