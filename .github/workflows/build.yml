@@ -39,7 +39,11 @@ jobs:
         libxrender-dev \
         clang-17 \
         libclang-17-dev \
-        llvm-17
+        llvm-17 \
+        libgl-dev \
+        libegl-dev \
+        libfontconfig1-dev \
+        libinput-dev 
         pip install html5lib
     - name: Clone Qt repository
       run: git clone https://code.qt.io/qt/qt5.git
