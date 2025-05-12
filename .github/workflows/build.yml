@@ -47,7 +47,7 @@ jobs:
     - name: Initialize submodules
       run: |
         cd qt5
-        .\init-repository
+        perl "./init-repository"
     - name: Create build directory
       run: mkdir qt-build
     - name: Configure Qt
