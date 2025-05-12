@@ -47,7 +47,11 @@ jobs:
         libegl-dev \
         libfontconfig1-dev \
         libinput-dev \
-        libatspi2.0-dev libnss3-dev libssl-dev libx11-dev libxext-dev libxtst-dev libxcomposite-dev libxdamage-dev libxrandr-dev libfontconfig1-dev libfreetype6-dev libpng-dev libjpeg-dev zlib1g-dev
+        libatspi2.0-dev libnss3-dev libssl-dev libx11-dev libxext-dev libxtst-dev libxcomposite-dev libxdamage-dev libxrandr-dev libfontconfig1-dev libfreetype6-dev libpng-dev libjpeg-dev zlib1g-dev libasound2-dev libbz2-dev libcap-dev libcups2-dev libdrm-dev \
+        libegl1-mesa-dev libfontconfig1-dev libgcrypt11-dev \
+        libglu1-mesa-dev libicu-dev libnss3-dev libpci-dev libpulse-dev \
+        libssl-dev libudev-dev libxcomposite-dev libxcursor-dev \
+        libxdamage-dev libxrandr-dev libxtst-dev
         pip install html5lib
     - name: Clone Qt repository
       run: git clone https://code.qt.io/qt/qt5.git
