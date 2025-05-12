@@ -36,7 +36,10 @@ jobs:
         libxi-dev \
         libxkbcommon-dev \
         libxkbcommon-x11-dev \
-        libxrender-dev
+        libxrender-dev \
+        clang-16 \
+        libclang-16-dev \
+        llvm-16
         pip install html5lib
     - name: Clone Qt repository
       run: git clone https://code.qt.io/qt/qt5.git
