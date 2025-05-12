@@ -37,9 +37,9 @@ jobs:
         libxkbcommon-dev \
         libxkbcommon-x11-dev \
         libxrender-dev \
-        clang-17 \
-        libclang-17-dev \
-        llvm-17 \
+        clang-16 \
+        libclang-16-dev \
+        llvm-16 \
         libgl-dev \
         libegl-dev \
         libfontconfig1-dev \
