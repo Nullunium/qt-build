@@ -40,6 +40,9 @@ jobs:
         clang-16 \
         libclang-16-dev \
         llvm-16 \
+        clang-17 \
+        libclang-17-dev \
+        llvm-17 \
         libgl-dev \
         libegl-dev \
         libfontconfig1-dev \
