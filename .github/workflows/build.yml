@@ -75,7 +75,6 @@ jobs:
         node-tslib \
         docker-compose \
         libmng-dev \
-        libgconf-2-4 \
         libsnappy-dev \
         libxshmfence-dev \
         libevent-dev \
