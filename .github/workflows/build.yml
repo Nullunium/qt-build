@@ -68,7 +68,35 @@ jobs:
         libegl1-mesa-dev libfontconfig1-dev \
         libglu1-mesa-dev libicu-dev libnss3-dev libpci-dev libpulse-dev \
         libssl-dev libudev-dev libxcomposite-dev libxcursor-dev \
-        libxdamage-dev libxrandr-dev libxtst-dev
+        libxdamage-dev libxrandr-dev libxtst-dev \
+        libsystemd-dev \
+        libb2-dev \
+        libproxy-dev \
+        libdirectfb-dev \
+        node-tslib \
+        docker \
+        docker-compose \
+        libmng-dev \
+        libgconf2-dev \
+        libsnappy-dev \
+        libxshmfence-dev \
+        libevent-dev \
+        libminizip-dev \
+        libre2-dev \
+        liblcms2-dev \
+        libxslt1-dev \
+        libavcodec-dev \
+        libavformat-dev \
+        libavutil-dev \
+        libopus-dev \
+        libvpx-dev \
+        libopenjp2-7-dev \
+        libxkbfile-dev \
+        libffmpeg-nvenc-dev \
+        libffmpeg-ocaml-dev \
+        libpoppler-cpp-dev \
+        libgbm-dev \
+        libva-dev
         pip install html5lib
     - name: Clone Qt repository
       run: git clone https://code.qt.io/qt/qt5.git
@@ -85,15 +113,15 @@ jobs:
     - name: Configure Qt
       run: |
         cd qt-build
-        ../qt5/configure -developer-build -submodules qtwebengine && ninja -prefix qt-install -webengine-proprietary-codecs -release -opensource -confirm-license 
+        ../qt5/configure -developer-build -submodules qtwebengine -prefix qt-install -webengine-proprietary-codecs -release -opensource -confirm-license 
     - name: Build Qt
       run: |
         cmake qt5
         cmake --build qt-build --parallel 
-    - name: Install Qt
-      run: |
-        cd qt-build
-        cmake --install . 
+    # - name: Install Qt
+    #   run: |
+    #     cd qt-build
+    #     cmake --install . 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
