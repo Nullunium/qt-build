@@ -27,7 +27,6 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt update
-        
         sudo apt install gperf flex bison perl ninja-build nodejs g++ cmake \
         libfontconfig1-dev \
         libfreetype-dev \
@@ -74,10 +73,9 @@ jobs:
         libproxy-dev \
         libdirectfb-dev \
         node-tslib \
-        docker \
         docker-compose \
         libmng-dev \
-        libgconf2-dev \
+        libgconf-2-4 \
         libsnappy-dev \
         libxshmfence-dev \
         libevent-dev \
