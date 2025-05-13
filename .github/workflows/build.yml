@@ -9,21 +9,21 @@ jobs:
     # - name: Set up Visual Studio environment
     #   run: |
     #     & "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-    - name: Free Disk Space (Ubuntu)
-      uses: jlumbroso/free-disk-space@main
-      with:
-        # this might remove tools that are actually needed,
-        # if set to "true" but frees about 6 GB
-        tool-cache: false
+    # - name: Free Disk Space (Ubuntu)
+    #   uses: jlumbroso/free-disk-space@main
+    #   with:
+    #     # this might remove tools that are actually needed,
+    #     # if set to "true" but frees about 6 GB
+    #     tool-cache: false
         
-        # all of these default to true, but feel free to set to
-        # "false" if necessary for your workflow
-        android: true
-        dotnet: true
-        haskell: true
-        large-packages: false
-        docker-images: true
-        swap-storage: true
+    #     # all of these default to true, but feel free to set to
+    #     # "false" if necessary for your workflow
+    #     android: true
+    #     dotnet: true
+    #     haskell: true
+    #     large-packages: false
+    #     docker-images: true
+    #     swap-storage: true
     - name: Install dependencies
       run: |
         sudo apt install gperf flex bison perl ninja-build nodejs g++ cmake \
@@ -83,7 +83,7 @@ jobs:
     - name: Configure Qt
       run: |
         cd qt-build
-        ../qt5/configure -prefix qt-install -webengine-proprietary-codecs -release -opensource -confirm-license 
+        ../qt5/configure -developer-build -submodules qtwebengine && ninja -prefix qt-install -webengine-proprietary-codecs -release -opensource -confirm-license 
     - name: Build Qt
       run: |
         cmake qt5
