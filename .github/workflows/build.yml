@@ -27,7 +27,7 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt update
-        sudo apt upgrade
+        
         sudo apt install gperf flex bison perl ninja-build nodejs g++ cmake \
         libfontconfig1-dev \
         libfreetype-dev \
