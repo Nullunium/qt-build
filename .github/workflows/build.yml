@@ -101,20 +101,31 @@ jobs:
       run: |
         cd qt5
         git checkout v6.8.3
-    - name: Initialize submodules
+    - name: Initialize submodules --module-subset=qtbase,qtshadertools,qtdeclarative,qtwebengine
       run: |
         cd qt5
         perl "./init-repository"
     - name: Create build directory
       run: mkdir qt-build
-    - name: Configure Qt
+    - name: Configure & Build 
       run: |
         cd qt-build
+        mkdir qtshadertools qtdeclarative qtwebengine qt-install
         ../qt5/configure -developer-build -submodules qtwebengine -prefix qt-install -webengine-proprietary-codecs -release -opensource -confirm-license 
-    - name: Build Qt
-      run: |
-        cmake qt5
-        cmake --build qt-build --parallel 
+        cmake --build . --parallel
+        cd ../qtshadertools
+        cmake -G Ninja -DCMAKE_INSTALL_PREFIX=qt-install -DQT_BUILD_EXAMPLES=OFF -DQT_BUILD_TESTS=OFF ../../qt5/qtshadertools
+        cmake --build . --parallel
+        cd ../qtdeclarative
+        cmake -G Ninja -DCMAKE_INSTALL_PREFIX=qt-install -DQT_BUILD_EXAMPLES=OFF -DQT_BUILD_TESTS=OFF ../../qt5/qtdeclarative
+        cmake --build . --parallel
+        cd ../qtwebengine
+        cmake -G Ninja -DCMAKE_INSTALL_PREFIX=qt-install -DQT_BUILD_EXAMPLES=OFF -DQT_BUILD_TESTS=OFF ../../qt5/qtwebengine
+        cmake --build . --parallel
+    # - name: Build Qt
+    #   run: |
+    #     cmake qt5
+    #     cmake --build qt-build --parallel 
     # - name: Install Qt
     #   run: |
     #     cd qt-build
