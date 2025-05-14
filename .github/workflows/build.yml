@@ -35,6 +35,35 @@ jobs:
         libxcb-util-dev \
         libxcb-xfixes0-dev \
         libxcb-xkb-dev \
+        libdouble-conversion-dev \
+        libvulkan-dev \
+        libts-dev \
+        libcurl4-openssl-dev \
+        libgconf2-dev \
+        libdb2-dev \
+        libodbcinstq4-1-dev \
+        libinterbase-dev \
+        libmimer-dev \
+        libtiff-dev \
+        libjasper-dev \
+        liblttng-ust-dev \
+        libgssapi-krb5-2 \
+        qt6-qml-dev \
+        qt6-qtbase-dev \
+        qt6-qtdeclarative-dev \
+        qt6-qtmultimedia-dev \
+        qt6-qtwebsockets-dev \
+        qt6-qtwebengine-dev \
+        qt6-qtserialport-dev \
+        qt6-qtpurchasing-dev \
+        qt6-qtpositioning-dev \
+        qt6-qtcharts-dev \
+        qt6-qtimageformats-dev \
+        gn \
+        libslog2-dev \
+        libmd4c-dev \
+        libplatformgraphics-dev \
+        liblitehtml-dev \
         libxcb1-dev \
         libxext-dev \
         libxfixes-dev \
