@@ -104,17 +104,15 @@ jobs:
     - name: Initialize submodules 
       run: |
         cd qt5
-        perl "./init-repository" --module-subset=qtbase,qtshadertools,qtdeclarative,qtwebengine
+        perl "./init-repository" 
     - name: Create build directory
       run: mkdir qt-build
-    - name: Configure & Build 
+    - name: Configure & Build & Install
       run: |
         cd qt-build
-        mkdir qtwebengine qt-install
         ../qt5/configure -developer-build -submodules qtwebengine -prefix qt-install -webengine-proprietary-codecs -release -opensource -confirm-license 
-        cd qtwebengine
-        cmake -G Ninja -DCMAKE_INSTALL_PREFIX=qt-install -DQT_BUILD_EXAMPLES=OFF -DQT_BUILD_TESTS=OFF ../../qt5/qtwebengine
         cmake --build . --parallel
+        cmake --install .
     # - name: Build Qt
     #   run: |
     #     cmake qt5
