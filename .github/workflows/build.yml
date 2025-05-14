@@ -112,7 +112,7 @@ jobs:
         cd qt-build
         mkdir qtwebengine qt-install
         ../qt5/configure -developer-build -submodules qtwebengine -prefix qt-install -webengine-proprietary-codecs -release -opensource -confirm-license 
-        cd ../qtwebengine
+        cd qtwebengine
         cmake -G Ninja -DCMAKE_INSTALL_PREFIX=qt-install -DQT_BUILD_EXAMPLES=OFF -DQT_BUILD_TESTS=OFF ../../qt5/qtwebengine
         cmake --build . --parallel
     # - name: Build Qt
