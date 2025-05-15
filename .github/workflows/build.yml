@@ -111,9 +111,6 @@ jobs:
       run: |
         cd qt-build
         ../qt5/configure -developer-build -submodules qtwebengine -prefix qt-install -webengine-proprietary-codecs -release -opensource -confirm-license -j 16 \
-        -skip qtbase \
-        -skip qtsvg \
-        -skip qtactiveqt \
         -skip qtmultimedia \
         -skip qtxmlpatterns \
         -skip qttranslations \
@@ -128,10 +125,7 @@ jobs:
         -skip qtconnectivity \
         -skip qtwayland \
         -skip qt3d \
-        -skip qtimageformats \
         -skip qtserialbus \
-        -skip qtserialport \
-        -skip qtwebsockets \
         -skip qtcanvas3d \
         -skip qtwebview \
         -skip qtcharts \
@@ -146,12 +140,10 @@ jobs:
         -skip qtlottie \
         -skip qtquicktimeline \
         -skip qtquick3d \
-        -skip qtshadertools \
         -skip qt5compat \
         -skip qtcoap \
         -skip qtmqtt \
         -skip qtopcua \
-        -skip qtlanguageserver \
         -skip qthttpserver \
         -skip qtquick3dphysics \
         -skip qtgrpc \
@@ -164,6 +156,14 @@ jobs:
       # -skip qtdeclarative \
       # -skip qttools \
       # -skip qtpositioning \
+      # -skip qtbase \
+      # -skip qtsvg \
+      # -skip qtactiveqt \
+      # -skip qtimageformats \
+      # -skip qtserialport \
+      # -skip qtwebsockets \
+      # -skip qtshadertools \
+      # -skip qtlanguageserver \
     # - name: Build Qt
     #   run: |
     #     cmake qt5
