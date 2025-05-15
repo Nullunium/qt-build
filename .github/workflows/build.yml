@@ -110,7 +110,7 @@ jobs:
     - name: Configure & Build & Install
       run: |
         cd qt-build
-        ../qt5/configure -developer-build -submodules qtwebengine -prefix qt-install -webengine-proprietary-codecs -release -opensource -confirm-license \
+        ../qt5/configure -developer-build -submodules qtwebengine -prefix qt-install -webengine-proprietary-codecs -release -opensource -confirm-license -j 16 \
         -skip qtbase \
         -skip qtsvg \
         -skip qtactiveqt \
