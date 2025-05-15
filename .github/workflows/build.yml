@@ -110,7 +110,7 @@ jobs:
     - name: Configure & Build & Install
       run: |
         cd qt-build
-        ../qt5/configure -developer-build -submodules qtwebengine -prefix qt-install -webengine-proprietary-codecs -release -opensource -confirm-license -j 16 \
+        ../qt5/configure -developer-build -submodules qtwebengine -prefix qt-install -webengine-proprietary-codecs -release -opensource -confirm-license \
         -skip qtmultimedia \
         -skip qtxmlpatterns \
         -skip qttranslations \
@@ -149,7 +149,7 @@ jobs:
         -skip qtgrpc \
         -skip qtquickeffectmaker \
         -skip qtgraphs \ 
-        cmake --build . --parallel
+        cmake --build . --parallel -j 16
         cmake --install .
       # -skip qtwebengine \
       # -skip qtwebchannel \
