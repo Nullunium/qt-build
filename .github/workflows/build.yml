@@ -111,59 +111,8 @@ jobs:
       run: |
         cd qt-build
         ../qt5/configure -developer-build -submodules qtwebengine -prefix qt-install -webengine-proprietary-codecs -release -opensource -confirm-license \
-        -skip qtmultimedia \
-        -skip qtxmlpatterns \
-        -skip qttranslations \
-        -skip qtdoc \
-        -skip qtrepotools \
-        -skip qtqa \
-        -skip qtlocation \
-        -skip qtsensors \
-        -skip qtsystems \
-        -skip qtfeedback \
-        -skip qtpim \
-        -skip qtconnectivity \
-        -skip qtwayland \
-        -skip qt3d \
-        -skip qtserialbus \
-        -skip qtcanvas3d \
-        -skip qtwebview \
-        -skip qtcharts \
-        -skip qtdatavis3d \
-        -skip qtvirtualkeyboard \
-        -skip qtgamepad \
-        -skip qtscxml \
-        -skip qtspeech \
-        -skip qtnetworkauth \
-        -skip qtremoteobjects \
-        -skip qtwebglplugin \
-        -skip qtlottie \
-        -skip qtquicktimeline \
-        -skip qtquick3d \
-        -skip qt5compat \
-        -skip qtcoap \
-        -skip qtmqtt \
-        -skip qtopcua \
-        -skip qthttpserver \
-        -skip qtquick3dphysics \
-        -skip qtgrpc \
-        -skip qtquickeffectmaker \
-        -skip qtgraphs \ 
         cmake --build . --parallel -j 16
         cmake --install .
-      # -skip qtwebengine \
-      # -skip qtwebchannel \
-      # -skip qtdeclarative \
-      # -skip qttools \
-      # -skip qtpositioning \
-      # -skip qtbase \
-      # -skip qtsvg \
-      # -skip qtactiveqt \
-      # -skip qtimageformats \
-      # -skip qtserialport \
-      # -skip qtwebsockets \
-      # -skip qtshadertools \
-      # -skip qtlanguageserver \
     # - name: Build Qt
     #   run: |
     #     cmake qt5
