@@ -45,7 +45,6 @@ jobs:
         gn \
         libmd4c-dev \
         libmd4c-html0-dev \
-        liblitehtml-dev \
         libxcb1-dev \
         libxext-dev \
         libxfixes-dev \
@@ -95,6 +94,7 @@ jobs:
         libgbm-dev \
         libva-dev
         pip install html5lib
+      # liblitehtml-dev \
     - name: Clone Qt repository
       run: git clone https://code.qt.io/qt/qt5.git
     - name: Checkout version 6.8.3
