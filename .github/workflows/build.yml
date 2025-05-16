@@ -111,7 +111,7 @@ jobs:
       run: |
         cd qt-build
         ../qt5/configure -developer-build -submodules qtwebengine -prefix qt-install -webengine-proprietary-codecs -release -opensource -confirm-license 
-        cmake --build . --parallel -j 16
+        cmake --build . --parallel -j 48
         cmake --install .
     # - name: Build Qt
     #   run: |
